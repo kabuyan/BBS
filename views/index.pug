@@ -2,11 +2,21 @@ doctype html
 html(lang="ja")
     head 
         meta(charset="utf-8")
+        link(href="/css/style.css" rel="stylesheet" type="text/css")
     body
-        p レスを投稿する
-        form(action="/" method="POST")
-            input(type="text" name="username" placeholder="名前")
-            br
-            textarea(name="comment", cols="100", rows="10" placeholder="コメント内容")
-            br
-            button(type="submit") 書き込む
+        each post,index in posts
+            div(class="post")
+                if post.name 
+                    b #{index+1} #{post.name}
+                else 
+                    b #{index+1} 名無し
+                p #{post.comment}
+        
+        div(class="form")
+            p レスを投稿する
+            form(action="/" method="POST")
+                input(type="text" name="username" placeholder="名前")
+                br
+                textarea(name="comment", cols="100", rows="10" placeholder="コメント内容")
+                br
+                button(type="submit") 書き込む

@@ -1,0 +1,12 @@
+.post {
+    border: solid;
+    padding: 8px;
+    margin-bottom: 8px;
+    width: 650px;
+}
+
+.form {
+    border-top: solid;
+    padding-top: 10px;
+    margin-top: 50px;
+}
